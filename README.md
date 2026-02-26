@@ -38,7 +38,7 @@ src/main/java/com/auth/api_auth_sozinho
 
 Edite o arquivo `application.properties`:
 
-```properties
+properties
 spring.datasource.url=jdbc:postgresql://localhost:5432/api_auth
 spring.datasource.username=postgres
 spring.datasource.password=SUA_SENHA
@@ -133,3 +133,4 @@ São Vicente - SP
 LinkedIn: https://www.linkedin.com/in/marcelo-masaharu-42720a37a
 
 GitHub: https://github.com/Masaharu07
+
