@@ -72,22 +72,27 @@ Body (JSON)
 
 Respostas:
 201 Created → Usuário criado com sucesso
+
 400 Bad Request → Dados inválidos
+
 409 Conflict → Email ou username já cadastrado
 
 Login
 `
 POST /auth/login
 `
+
 Body (JSON)
 `{
   "email": "marcelo@email.com",
   "password": "123123"
 }`
+
 Resposta
 `{
   "token": "uuid-gerado"
 }`
+
 Segurança:
 Senhas armazenadas com BCrypt
 Spring Security protege as rotas
@@ -114,6 +119,7 @@ Marcelo Masaharu
 São Vicente - SP
 LinkedIn: https://www.linkedin.com/in/marcelo-masaharu-42720a37a
 GitHub: https://github.com/Masaharu07
+
 
 
 
