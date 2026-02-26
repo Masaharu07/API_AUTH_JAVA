@@ -38,13 +38,14 @@ src/main/java/com/auth/api_auth_sozinho
 
 Edite o arquivo `application.properties`:
 
-properties
+properties:
 spring.datasource.url=jdbc:postgresql://localhost:5432/api_auth
 spring.datasource.username=postgres
 spring.datasource.password=SUA_SENHA
 
 spring.jpa.hibernate.ddl-auto=update
 spring.jpa.show-sql=true
+
 Como Executar o Projeto
 1. Clonar o repositório
 git clone https://github.com/seu-usuario/api-auth.git
@@ -58,79 +59,58 @@ A API estará disponível em:
 http://localhost:8080
 Endpoints da API
 Cadastro de Usuário
-
+`
 POST /auth/register
-
+`
 Body (JSON)
-{
+`{
   "username": "Marcelo",
   "email": "marcelo@email.com",
   "password": "123123"
-}
-Respostas
-
+}`
+Respostas:
 201 Created → Usuário criado com sucesso
-
 400 Bad Request → Dados inválidos
-
 409 Conflict → Email ou username já cadastrado
 
 Login
-
+`
 POST /auth/login
-
+`
 Body (JSON)
-{
+`{
   "email": "marcelo@email.com",
   "password": "123123"
-}
+}`
 Resposta
-{
+`{
   "token": "uuid-gerado"
-}
-Segurança
-
+}`
+Segurança:
 Senhas armazenadas com BCrypt
-
 Spring Security protege as rotas
-
 Rotas públicas: /auth/**
-
 Demais rotas podem ser protegidas com autenticação
-
 Conceitos Praticados
-
 Arquitetura em camadas (Controller, Service, Repository)
-
 Autenticação de usuários
-
 Criptografia de senha
-
 Validação de dados
-
 Integração com PostgreSQL
-
 Configuração de segurança com Spring Security
 
-Melhorias Futuras
-
+Melhorias Futuras:
 Implementar autenticação com JWT
-
 Criar rotas protegidas por token
-
 Sistema de permissões (ADMIN / USER)
-
 Tratamento global de exceções
-
 Testes automatizados
-
 Dockerização da aplicação
 
-Autor
-
+Autor:
 Marcelo Masaharu
 São Vicente - SP
 LinkedIn: https://www.linkedin.com/in/marcelo-masaharu-42720a37a
-
 GitHub: https://github.com/Masaharu07
+
 
