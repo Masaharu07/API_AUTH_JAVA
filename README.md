@@ -62,12 +62,14 @@ Cadastro de Usuário
 `
 POST /auth/register
 `
+
 Body (JSON)
 `{
   "username": "Marcelo",
   "email": "marcelo@email.com",
   "password": "123123"
 }`
+
 Respostas:
 201 Created → Usuário criado com sucesso
 400 Bad Request → Dados inválidos
@@ -112,5 +114,6 @@ Marcelo Masaharu
 São Vicente - SP
 LinkedIn: https://www.linkedin.com/in/marcelo-masaharu-42720a37a
 GitHub: https://github.com/Masaharu07
+
 
 
