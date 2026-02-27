@@ -18,6 +18,11 @@ public class User {
     private String email;
     @Column(nullable = false, length = 100)
     private String passwordHash;
+    @Column(name = "auth_token", unique = true)
+    private String authToken;
+
+    public String getAuthToken() { return authToken; }
+    public void setAuthToken(String authToken) { this.authToken = authToken; }
 
     public UUID getId() {return id;}
     public void setId(UUID id) {this.id = id;}

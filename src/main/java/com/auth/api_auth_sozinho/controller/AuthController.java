@@ -3,10 +3,15 @@ package com.auth.api_auth_sozinho.controller;
 import com.auth.api_auth_sozinho.dtos.LoginRequest;
 import com.auth.api_auth_sozinho.dtos.LoginResponse;
 import com.auth.api_auth_sozinho.dtos.RegisterRequest;
+import com.auth.api_auth_sozinho.dtos.UserMeResponse;
+import com.auth.api_auth_sozinho.model.User;
+import com.auth.api_auth_sozinho.repository.AuthRepository;
 import com.auth.api_auth_sozinho.service.AuthService;
+import com.auth.api_auth_sozinho.service.UserService;
 import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.server.ResponseStatusException;
 
 @RestController
 @RequestMapping("/auth")

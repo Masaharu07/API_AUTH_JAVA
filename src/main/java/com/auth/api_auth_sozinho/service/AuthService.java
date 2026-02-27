@@ -2,8 +2,10 @@ package com.auth.api_auth_sozinho.service;
 
 import com.auth.api_auth_sozinho.dtos.LoginRequest;
 import com.auth.api_auth_sozinho.dtos.RegisterRequest;
+import com.auth.api_auth_sozinho.dtos.UserMeResponse;
 import com.auth.api_auth_sozinho.model.User;
 import com.auth.api_auth_sozinho.repository.AuthRepository;
+import com.auth.api_auth_sozinho.repository.UserRepository;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
@@ -14,7 +16,7 @@ public class AuthService{
     private final AuthRepository authRepository;
     private final PasswordEncoder passwordEncoder;
 
-    public AuthService(AuthRepository authRepository, PasswordEncoder passwordEncoder) {
+    public AuthService(AuthRepository authRepository, UserRepository userRepository, PasswordEncoder passwordEncoder) {
         this.authRepository = authRepository;
         this.passwordEncoder = passwordEncoder;
     }
@@ -38,6 +40,10 @@ public class AuthService{
         if (!allowed){
             throw new RuntimeException("Usuario ou senha incorretos");
         }
-        return UUID.randomUUID().toString();
+        String token = UUID.randomUUID().toString();
+        user.setAuthToken(token);
+        authRepository.save(user);
+
+        return token;
     }
 }
